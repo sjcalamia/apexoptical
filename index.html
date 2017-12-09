@@ -118,7 +118,7 @@
   <header>
     <div class="branding">
       <h1 class="logo">Apex Optical</h1>
-      <h4 class="slogan">Shift your <span class="slogan-noun">perspective</span></h2>
+      <h4 class="slogan">Frame your <span class="slogan-noun">Perspective</span></h2>
     </div>
     <nav class="main">
     </nav>
@@ -160,5 +160,33 @@
       </div>
     </section>
   </article>
+  <script>//<!--
+    let nouns = [
+      "Perspective",
+      "Outlook",
+      "Look",
+      "Comfort"
+    ]
+    function makeLoopingIterator(arr) {
+      let nextIndex = 0;
+
+      return {
+         next: function() {
+             return nextIndex < arr.length ?
+                 {value: arr[nextIndex++], done: false} :
+                 {value: arr[nextIndex = 0], done: false};
+         }
+      };
+    }
+    let newNoun = makeLoopingIterator(nouns)
+    function setNoun() {
+      let sns = window.document.getElementsByClassName("slogannoun")
+      for (sn of sns) {
+        sn.text = newNoun.next().value
+      }
+    }
+    setInterval(setNoun, 1000)
+  //-->
+  </script>
 </body>
 </html>
