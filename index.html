@@ -139,7 +139,8 @@
       <div class="content">
         <h2 class="locname">Wisconsin Avenue</h2>
         <p class="hours"><span class="bold">Open: </span>Mon, Tues, Wed, Fri 10am-6:30pm, Thur 10am-7:30pm, and Sat 10am-4pm</p>
-        <p class="address">4200 Wisconsin Ave NW, Washington, DC 20016 <a class="directions button" href="https://www.google.com/maps/dir//4200%20Wisconsin%20Ave%20NW,%20Washington,%20DC%2020016">Get Directions</a></p>
+        <p class="address">4200 Wisconsin Ave NW, Washington, DC 20016 <br>
+          <a class="directions button" href="https://www.google.com/maps/dir//4200%20Wisconsin%20Ave%20NW,%20Washington,%20DC%2020016">Get Directions</a></p>
         <p class="phone"><a class="phonenumber button btn cta" href="tel://2022441308">Call Us: 202-244-1308</a></p>
       </div>
     </section>
@@ -182,7 +183,7 @@
     function setNoun() {
       let val = newNoun.next().value
       for (sn of window.document.getElementsByClassName("slogan-noun")) {
-        sn.text = val
+        sn.innerHTML = val
       }
     }
     setInterval(setNoun, 1000)
