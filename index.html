@@ -180,9 +180,11 @@
     }
     let newNoun = makeLoopingIterator(nouns)
     function setNoun() {
+      let val = newNoun.next().value
+      console.log(val)
       let sns = window.document.getElementsByClassName("slogan-noun")
       for (sn of sns) {
-        sn.text = newNoun.next().value
+        sn.text = val
       }
     }
     setInterval(setNoun, 1000)
