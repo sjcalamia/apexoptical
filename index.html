@@ -118,7 +118,7 @@
   <header>
     <div class="branding">
       <h1 class="logo">Apex Optical</h1>
-      <h4 class="slogan">Frame your <span class="slogan-noun">Perspective</span></h2>
+      <h4 class="slogan">Frame your <span class="next-slogan-noun"></span><span class="slogan-noun">Perspective</span></h2>
     </div>
     <nav class="main">
     </nav>
@@ -182,7 +182,7 @@
     let newNoun = makeLoopingIterator(nouns)
     function setNoun() {
       let val = newNoun.next().value
-      for (sn of window.document.getElementsByClassName("slogan-noun")) {
+      for (sn of window.document.getElementsByClassName("next-slogan-noun")) {
         sn.innerHTML = val
       }
     }
