@@ -21,13 +21,20 @@
       background-image: url();
       font-size: 16px;
     }
-    header, nav {
+    header {
       height: 5rem;
-      background-color: rgba(33,33,33,50);
-      color: #FAFFFF;
       position: absolute;
       top: 0vh;
       width: 100vw;
+      background-color: rgba(33,33,33,50);
+      color: #FAFFFF;
+    }
+    nav {
+      position: relative
+    }
+    article.homepage {
+      position: relative;
+      top: 5rem;
     }
     section {
     }
@@ -36,7 +43,7 @@
     }
     .location {
       width: 100vw;
-      height: 33vw;
+      height: 33vh;
       background-color: #3c3c3c;
       color: #FAFFFF;
       text-align: center;
