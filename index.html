@@ -181,9 +181,7 @@
     let newNoun = makeLoopingIterator(nouns)
     function setNoun() {
       let val = newNoun.next().value
-      console.log(val)
-      let sns = window.document.getElementsByClassName("slogan-noun")
-      for (sn of sns) {
+      for (sn of window.document.getElementsByClassName("slogan-noun")) {
         sn.text = val
       }
     }
