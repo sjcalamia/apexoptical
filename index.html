@@ -239,6 +239,7 @@
     let newNoun = makeLoopingIterator(nouns)
     function setNoun() {
       let val = newNoun.next().value
+      let iteration = 0;
       for (nsn of window.document.getElementsByClassName("next-slogan-noun")) {
         let sn = nsn.nextSibling
         nsn.innerHTML = val
@@ -246,14 +247,21 @@
         nsn.classList.add("move-in")
         sn.classList.add("make-translucent")
         sn.classList.add("move-out")
-        setTimeout(function(){
+        nsn.classList.add(`nsn-${iteration}`)
+        document[`nsn${iteration}in`] = function() {
+          let nsn = document.getElementsByClassName(`nsn-${iteration}`)
+          let sn = nsn.nextSibling
           sns.parentElement.classList.replace("up","down")
-        },1000)
-        setTimeout(function(){
+        }
+        document[`nsn${iteration}out`] = function() {
+          let sns = document.getElementsByClassName(`nsn-${iteration}`)
           sns.innerHTML = ""
           ns.innerHTML = val
           sns.parentElement.classList.replace("down","up")
-        },1100)
+        }
+        setTimeout(document[`nsn${iteration}in`],1000)
+        setTimeout(document[`nsn${iteration}out`],1100)
+        iteration++
       }
     }
     setInterval(setNoun, 2000)
