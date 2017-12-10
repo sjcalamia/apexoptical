@@ -251,11 +251,12 @@
         document[`nsn${iteration}in`] = function() {
           let nsn = document.getElementsByClassName(`nsn-${iteration}`)
           let sn = nsn.nextSibling
-          sns.parentElement.classList.replace("up","down")
+          nsn.parentElement.classList.replace("up","down")
         }
         document[`nsn${iteration}out`] = function() {
-          let sns = document.getElementsByClassName(`nsn-${iteration}`)
-          sns.innerHTML = ""
+          let nsn = document.getElementsByClassName(`nsn-${iteration}`)
+          let sn = nsn.nextSibling
+          nsn.innerHTML = ""
           ns.innerHTML = val
           sns.parentElement.classList.replace("down","up")
         }
