@@ -245,12 +245,16 @@
         sn.classList.add("make-translucent")
         sn.classList.add("move-out")
         setTimeout(function(){
-          sn.
-        },900)
-        
+          sns.parentElement.classList.replace("up","down")
+        },1000)
+        setTimeout(function(){
+          sns.innerHTML = ""
+          ns.innerHTML = val
+          sns.parentElement.classList.replace("down","up")
+        },1100)
       }
     }
-    setInterval(setNoun, 1000)
+    setInterval(setNoun, 2000)
   //-->
   </script>
 </body>
