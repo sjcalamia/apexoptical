@@ -63,7 +63,7 @@
       position: relative;
     }
     .slogan-noun {
-      position: absolute;
+      position: relative;
       top: 0em;
     }
     .up .slogan-noun {
@@ -134,34 +134,17 @@
     }
 
     /* Animations */
-    @keyframes opaquify {
-      from { opacity: 0;}
-      to { opacity: 1;}
-    }
-    .make-opaque {
-      animation-name: opaquify;
-      animation-duration: 1s;
-    }
-    @keyframes translucify {
-      from { opacity: 0;}
-      to { opacity: 1;}
-    }
-    .make-translucent {
-      animation-name: translucify;
-      animation-duration: 1s;
-    }
-
     @keyframes move-in {
-      from { top: -1em; }
-      to { top: 0em; }
+      from { top: -1em; opacity: 0; }
+      to { top: 0em; opacity: 1; }
     }
     .move-in {
       animation-name: move-in;
       animation-duration: 1s;
     }
     @keyframes move-out {
-      from { top: 0em; }
-      to { top: 1em; }
+      from { top: 0em; opactiy: 1; }
+      to { top: 1em; opacity: 0; }
     }
     .move-out {
       animation-name: move-out;
@@ -238,32 +221,36 @@
          }
       };
     }
-    let newNoun = makeLoopingIterator(nouns)
+    var newNoun = makeLoopingIterator(nouns)
     function setNoun() {
       let val = newNoun.next().value
       let iteration = 0;
-      for (nsn of window.document.getElementsByClassName("next-slogan-noun")) {
+      for (const [i,nsn] of [...window.document.getElementsByClassName("next-slogan-noun")].entries()) {
+        if (nsn.id == "") {
+          nsn.id = `nsn${i}`
+        }
+        document[nsn.id] = nsn
         let sn = nsn.nextSibling
         nsn.innerHTML = val
-        nsn.classList.add("make-opaque")
         nsn.classList.add("move-in")
-        sn.classList.add("make-translucent")
         sn.classList.add("move-out")
-        nsn.classList.add(`nsn-${iteration}`)
-        document[`nsn${iteration}in`] = function() {
-          let nsn = document.getElementsByClassName(`nsn-${iteration}`)[0]
+        let animationComplete = function() {
+          console.log(this)
+          let nsn = this
           let sn = nsn.nextSibling
+          nsn.classlist.remove("move-in")
+          sn.classlist.remove("move-out")
           nsn.parentElement.classList.replace("up","down")
         }
-        document[`nsn${iteration}out`] = function() {
-          let nsn = document.getElementsByClassName(`nsn-${iteration}`)[0]
+        let reset = function() {
+          let nsn = this
           let sn = nsn.nextSibling
+          sn.innerHTML = nsn.innerHTML
           nsn.innerHTML = ""
-          sn.innerHTML = val
-          sns.parentElement.classList.replace("down","up")
+          nsn.parentElement.classList.replace("down","up")
         }
-        setTimeout(document[`nsn${iteration}in`],1000)
-        setTimeout(document[`nsn${iteration}out`],1100)
+        setTimeout(animationComplete.bind(nsn),1000)
+        setTimeout(reset.bind(nsn),1100)
         iteration++
       }
     }
