@@ -136,7 +136,23 @@
       animation-name: translucify;
       animation-duration: 1s;
     }
-  
+
+    @keyframes move-in {
+      from { top: -1em; }
+      to { top: 0em; }
+    }
+    .move-in {
+      animation-name: move-in;
+      animation-duration: 1s;
+    }
+    @keyframes move-out {
+      from { top: 0em; }
+      to { top: 1em; }
+    }
+    .move-out {
+      animation-name: move-out;
+      animation-duration: 1s;
+    }
   </style>
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -209,8 +225,16 @@
     let newNoun = makeLoopingIterator(nouns)
     function setNoun() {
       let val = newNoun.next().value
-      for (sn of window.document.getElementsByClassName("next-slogan-noun")) {
-        sn.innerHTML = val
+      for (nsn of window.document.getElementsByClassName("next-slogan-noun")) {
+        let sn = nsn.nextSibling
+        nsn.innerHTML = val
+        nsn.classList.add("make-opaque")
+        nsn.classList.add("move-in")
+        sn.classList.add("make-translucent")
+        sn.classList.add("move-out")
+        setTimeout(function(){
+          sn.
+        },900)
         
       }
     }
