@@ -109,6 +109,17 @@
     #location3 {
       background-image: url("/images/IMG_1978.jpg");
     }
+
+    /* Animations */
+    @keyframes opaquify {
+      from { opacity: 0;}
+      to { opacity: 1;}
+    }
+    .make-opaque {
+      opacity: 0;
+      animation-name: opaquify;
+      animation-duration: 1s;
+    }
   
   </style>
   <!-- Latest compiled and minified CSS -->
@@ -184,6 +195,7 @@
       let val = newNoun.next().value
       for (sn of window.document.getElementsByClassName("next-slogan-noun")) {
         sn.innerHTML = val
+        
       }
     }
     setInterval(setNoun, 1000)
