@@ -61,12 +61,24 @@
       position: relative;
     }
     .slogan-noun {
+      position: absolute;
+      top: 0em;
+    }
+    .up .slogan-noun {
       opacity: 1;
+    }
+    .down .slogan-noun {
+      opacity: 0;
     }
     .next-slogan-noun {
       position: absolute;
       top: -1em;
+    }
+    .up .next-slogan-noun {
       opacity: 0;
+    }
+    .down .next-slogan-noun {
+      opacity: 1;
     }
     article.homepage {
       position: relative;
@@ -161,7 +173,7 @@
   <header>
     <div class="branding">
       <h1 class="logo">Apex Optical</h1>
-      <h4 class="slogan">Frame your <span class="next-slogan-noun"></span><span class="slogan-noun">Perspective</span></h2>
+      <h4 class="slogan up">Frame your <span class="next-slogan-noun"></span><span class="slogan-noun">Perspective</span></h2>
     </div>
     <nav class="main">
     </nav>
