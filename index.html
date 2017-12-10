@@ -249,12 +249,12 @@
         sn.classList.add("move-out")
         nsn.classList.add(`nsn-${iteration}`)
         document[`nsn${iteration}in`] = function() {
-          let nsn = document.getElementsByClassName(`nsn-${iteration}`)
+          let nsn = document.getElementsByClassName(`nsn-${iteration}`)[0]
           let sn = nsn.nextSibling
           nsn.parentElement.classList.replace("up","down")
         }
         document[`nsn${iteration}out`] = function() {
-          let nsn = document.getElementsByClassName(`nsn-${iteration}`)
+          let nsn = document.getElementsByClassName(`nsn-${iteration}`)[0]
           let sn = nsn.nextSibling
           nsn.innerHTML = ""
           ns.innerHTML = val
