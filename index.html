@@ -74,10 +74,16 @@
       flex: 1 0 auto;
     }
     .logo {
+      font-family: var(--font-title);
+      order: 1;
+      text-align: center;
+      padding: 0;
+      margin: 0em;
+    }
+    nav .logo {
       padding: 0;
       margin: 0em 2em;
       display: inline-block;
-      font-family: var(--font-title);
       order: 1;
       flex: 0 1.5 auto;
       text-align: center;
@@ -148,7 +154,14 @@
       text-align: left;
       initial-letter: 3.0;
     }
-    .hero .hed::first-letter {
+    .hero .hed.logo {
+      text-align: center;
+      align-self: flex-start;
+      justify-self: center;
+      order: inherit;
+      font-size: 4em;
+    }
+    .hero .hed ::first-letter {
       font-size: 4em;
       position: relative;
       display: inline-block;
@@ -237,7 +250,7 @@
 <body>
   <header>
     <div class="branding">
-      <h1 class="logo">Apex Optical</h1>
+      <h1 class="logo hide hidden">Apex Optical</h1>
       <h4 class="established wings">DC's Opticians since 1977</h4>
       <h4 class="slogan wings up">Frame Your <span class="slogan-noun">Perspective</span></h2>
     </div>
@@ -247,11 +260,11 @@
   <article class="homepage">
     <section class="hero jumbotron">
       <div class="content cta">
-        <h2 class="hed">3 locations to better serve you</h3>
+        <h1 class="hed logo">Apex Optical</h3>
         <div class="cta buttons">
-          <a class="button internal" href="#location1">Wisconsin Ave</a>
-          <a class="button internal" href="#location2">Bethesda</a>
-          <a class="button internal" href="#location3">Downtown <abbr title="District of Columbia">DC</abbr></a>
+          <a class="button internal" href="#WisconsinLocation">Wisconsin Ave</a>
+          <a class="button internal" href="#BethesdaLocation">Bethesda</a>
+          <a class="button internal" href="#DowntownLocation">Downtown <abbr title="District of Columbia">DC</abbr></a>
         </div>
         <h3 class="dek">Walk-ins Welcome!</h3>
       </div>
