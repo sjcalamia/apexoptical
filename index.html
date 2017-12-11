@@ -142,9 +142,8 @@
       height: calc( 90vh - 5rem );
       background-image: url("/images/IMG_1903.jpg");
       background-position: 50% 50%;
-      justify-content: flex-start;
-      align-items: center;
-      align-content: flex-start;
+      display: block;
+      position: relative;
     }
     .hero .hed {
       text-align: left;
@@ -162,9 +161,12 @@
     }
     .hero .cta.content {
       display: flex;
+      position: absolute;
+      top: 10%;
+      left: 0;
       flex-flow: column nowrap;
       justify-content: space-evenly;
-      align-items: space-between;
+      align-items: stretch;
       align-content: space-evenly;
     }
     .hero .cta.buttons {
@@ -238,7 +240,7 @@
   <header>
     <div class="branding">
       <h1 class="logo">Apex Optical</h1>
-      <h4 class="established wings">Est. 1977</h4>
+      <h4 class="established wings">DC's Optometrist since 1977</h4>
       <h4 class="slogan wings up">Frame Your <span class="slogan-noun">Perspective</span></h2>
     </div>
     <nav class="main">
@@ -287,9 +289,8 @@
   <script language="JavaScript">//<!--
     let nouns = [
       "Perspective",
-      "Outlook",
       "Look",
-      "Comfort"s
+      "Comfort"
     ]
     function makeLoopingIterator(arr) {
       let nextIndex = 0;
