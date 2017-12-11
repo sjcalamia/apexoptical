@@ -7,10 +7,10 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/reset.css" media="all">
   <style>
     :root {
-      --header-height: 5rem;
+      --header-height: 3rem;
       --color-base03: #333;
       --color-base02: #3c3c3c;
       --color-base01: #c3c3c3;
@@ -28,6 +28,14 @@
       margin: 0;
       box-sizing: content-box;
     }
+    body {
+      background-image: url();
+      background-color: rgb(0,0,0);
+      font-size: 16px;
+      font-family: var(--font-para);
+    }
+    h1 {
+    }
     .hide {
       display: none;
       visibility: hidden;
@@ -35,15 +43,12 @@
     .button {
       border: 1px solid black;
       padding: 1em;
+      margin: 1em;
       display: inline-block;
       background-color: var(--color-base01);
       color: var(--color-base02)
-    }
-    body {
-      background-image: url();
-      background-color: rgb(0,0,0);
-      font-size: 16px;
-      font-family: var(--font-para);
+      border: 3px solid var(--color-base2);
+      background-color: rgba(90,90,90,.8);
     }
     header {
       height: var(--header-height);
@@ -53,45 +58,65 @@
       background-color: rgba(33,33,33,.9);
       color: var(--color-base3);
       z-index: 9999;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
     }
     .branding {
       position: relative;
-      width: 50%;
-      left: 25%;
-      text-align: center;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-items: center;
+      align-content: center;
+      flex: 1 0 auto;
     }
     .logo {
       padding: 0;
-      margin: 0;
+      margin: 0em 2em;
       display: inline-block;
       font-family: var(--font-title);
+      order: 1;
+      flex: 0 1.5 auto;
+      text-align: center;
+    }
+    .branding .wings {
+      flex: .75 0 auto;
+      font-weight: 500;
+      font-family: var(--font-sub);
+      position: relative;
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+    }
+    .established {
+      order: -1;
+      text-align: right;
     }
     .slogan {
-      padding: 0;
-      margin: 0em 0em 0em 1em;
-      display: inline-block;
-      position: absolute;
-      top: 25%;
-      font-family: var(--font-sub);
+      order: 2;
+      text-align: left;
     }
-    .slogan-noun {
+    .current.slogan-noun {
       position: relative;
       top: 0em;
     }
-    .up .slogan-noun {
+    .up .current.slogan-noun {
       opacity: 1;
     }
-    .down .slogan-noun {
+    .down .current.slogan-noun {
       opacity: 0;
     }
-    .next-slogan-noun {
+    .next.slogan-noun {
       position: absolute;
       top: -1em;
     }
-    .up .next-slogan-noun {
+    .up .next.slogan-noun {
       opacity: 0;
     }
-    .down .next-slogan-noun {
+    .down .next.slogan-noun {
       opacity: 1;
     }
     article.homepage {
@@ -103,16 +128,29 @@
     .bold {
       font-weight: 700;
     }
+    .jumbotron {
+      width: 100%;
+      height: 88vh;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      display: flex;
+      background-size: cover;
+    }
     .hero {
       height: calc( 90vh - 5rem );
       background-image: url("/images/IMG_1903.jpg");
       background-position: 50% 50%;
-      background-size: cover;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: flex-start;
     }
     .hero .hed {
       text-align: left;
+      initial-letter: 3.0;
     }
-    .hero .hed .huge {
+    .hero .hed::first-letter {
       font-size: 4em;
       position: relative;
       display: inline-block;
@@ -121,6 +159,13 @@
     }
     .hero .dek {
       text-align: right;
+    }
+    .hero .cta.content {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-evenly;
+      align-items: space-between;
+      align-content: space-evenly;
     }
     .hero .cta.buttons {
       display: flex;
@@ -193,15 +238,16 @@
   <header>
     <div class="branding">
       <h1 class="logo">Apex Optical</h1>
-      <h4 class="slogan up">Frame Your <span class="next-slogan-noun"></span><span class="slogan-noun">Perspective</span></h2>
+      <h4 class="established wings">Est. 1977</h4>
+      <h4 class="slogan wings up">Frame Your <span class="slogan-noun">Perspective</span></h2>
     </div>
     <nav class="main">
     </nav>
   </header>
   <article class="homepage">
-    <section class="hero">
-      <div class="content">
-        <h2 class="hed"><span class="huge">3</span> locations to better serve you</h3>
+    <section class="hero jumbotron">
+      <div class="content cta">
+        <h2 class="hed">3 locations to better serve you</h3>
         <div class="cta buttons">
           <a class="button internal" href="#location1">Wisconsin Ave</a>
           <a class="button internal" href="#location2">Bethesda</a>
@@ -210,7 +256,7 @@
         <h3 class="dek">Walk-ins Welcome!</h3>
       </div>
     </section>
-    <section class="location" id="location1">
+    <section class="location jumbotron" id="WisconsinLocation">
       <address class="content">
         <h2 class="locname">Wisconsin Avenue</h2>
         <p class="hours"><span class="bold">Open: </span>Mon, Tues, Wed, Fri 10am-6:30pm, Thur 10am-7:30pm, and Sat 10am-4pm</p>
@@ -219,7 +265,7 @@
         <p class="phone"><a class="phonenumber button btn cta" href="tel://2022441308">Call Us: 202-244-1308</a></p>
       </address>
     </section>
-    <section class="location" id="location2">
+    <section class="location jumbotron" id="BethesdaLocation">
       <address class="content">
         <h2 class="locname">Bethesda, <abbr title="Maryland">MD</abbr></h2>
         <p class="hours"><span class="bold">Open: </span>Mon, Tue, Wed, Thur, Fri 10am-6pm</p>
@@ -228,7 +274,7 @@
         <p class="phone"><a class="phonenumber button btn cta" href="">Call Us</a></p>
       </address>
     </section>
-    <section class="location" id="location3">
+    <section class="location jumbotron" id="DowntownLocation">
       <address class="content">
         <h2 class="locname">Downtown <abbr title="District of Columbia">DC</abbr> (L Street)</h2>
         <p class="hours"><span class="bold">Open: </span>Mon, Tues, Wed, Fri 10am-6:30pm, Thur 10am-7:30pm, and Sat 10am-4pm</p>
@@ -238,12 +284,12 @@
       </address>
     </section>
   </article>
-  <script>//<!--
+  <script language="JavaScript">//<!--
     let nouns = [
       "Perspective",
       "Outlook",
       "Look",
-      "Comfort"
+      "Comfort"s
     ]
     function makeLoopingIterator(arr) {
       let nextIndex = 0;
@@ -260,7 +306,7 @@
     function setNoun() {
       let val = newNoun.next().value
       let iteration = 0;
-      for (const [i,nsn] of [...window.document.getElementsByClassName("next-slogan-noun")].entries()) {
+      for (const [i,nsn] of [...window.document.getElementsByClassName("next slogan-noun")].entries()) {
         if (nsn.nextSibling.innerHTML == val) {
           continue;
         }
@@ -289,7 +335,17 @@
         iteration++
       }
     }
-    setInterval(setNoun, 2000)
+    (function initSloganNouns() {
+      document.sloganNouns = [...document.getElementsByClassName("slogan-noun")]
+      for (let [iter,sn] of document.sloganNouns) {
+        sn.classList.add("current")
+        nsn = document.createElement(sn.localName)
+        nsn.classList.add(sn.classList.value)
+      }
+      setInterval(setNoun, 2000)
+    })()
+
+
   //-->
   </script>
 </body>
