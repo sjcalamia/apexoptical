@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Apex Optical | Frame your comfort :: DC Local Optician since 1977</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
   <style>
     :root {
       --header-height: 5rem;
@@ -14,6 +17,9 @@
       --color-base1:  #ddd;
       --color-base2:  #eee;
       --color-base3:  #faffff;
+      --font-para: "Merriweather", serif;
+      --font-title: "Montserrat", sans-serif;
+      --font-sub: "Forum", cursive;
     }
     * {
       padding: 0;
@@ -35,6 +41,7 @@
       background-image: url();
       background-color: rgb(0,0,0);
       font-size: 16px;
+      font-family: var(--font-para);
     }
     header {
       height: var(--header-height);
@@ -55,12 +62,15 @@
       padding: 0;
       margin: 0;
       display: inline-block;
+      font-family: var(--font-title);
     }
     .slogan {
       padding: 0;
-      margin: 0;
+      margin: 0em 0em 0em 1em;
       display: inline-block;
-      position: relative;
+      position: absolute;
+      top: 25%;
+      font-family: var(--font-sub);
     }
     .slogan-noun {
       position: relative;
@@ -226,6 +236,9 @@
       let val = newNoun.next().value
       let iteration = 0;
       for (const [i,nsn] of [...window.document.getElementsByClassName("next-slogan-noun")].entries()) {
+        if (nsn.nextSibling.innerHTML == val) {
+          continue;
+        }
         if (nsn.id == "") {
           nsn.id = `nsn${i}`
         }
@@ -236,21 +249,18 @@
         sn.classList.add("move-out")
         let animationComplete = function() {
           console.log(this)
-          let nsn = this
-          let sn = nsn.nextSibling
-          nsn.classlist.remove("move-in")
-          sn.classlist.remove("move-out")
+          this.classList.remove("move-in")
+          this.nextSibling.classList.remove("move-out")
           nsn.parentElement.classList.replace("up","down")
         }
         let reset = function() {
-          let nsn = this
-          let sn = nsn.nextSibling
-          sn.innerHTML = nsn.innerHTML
-          nsn.innerHTML = ""
-          nsn.parentElement.classList.replace("down","up")
+          let sn = this.nextSibling
+          sn.innerHTML = this.innerHTML
+          this.innerHTML = ""
+          this.parentElement.classList.replace("down","up")
         }
-        setTimeout(animationComplete.bind(nsn),1000)
-        setTimeout(reset.bind(nsn),1100)
+        setTimeout(animationComplete.bind(document[nsn.id]),1000)
+        setTimeout(reset.bind(document[nsn.id]),1000)
         iteration++
       }
     }
