@@ -37,7 +37,7 @@
     h1 {
     }
     .hide {
-      display: none;
+      /* display: none; */
       visibility: hidden;
     }
     .button {
@@ -149,9 +149,9 @@
       background-image: url("/images/IMG_1903.jpg");
       background-position: 50% 50%;
       position: relative;
+      align-items: flex-start;
     }
     .hero .hed {
-      text-align: left;
       initial-letter: 3.0;
     }
     .hero .hed.logo {
@@ -167,13 +167,10 @@
       padding-right: .25em;
     }
     .hero .dek {
-      text-align: right;
     }
     .hero .cta.content {
       display: flex;
-      position: absolute;
-      top: 10%;
-      left: 0;
+      position: relative;
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
@@ -248,7 +245,7 @@
 <body>
   <header>
     <div class="branding">
-      <h1 class="logo hide hidden">Apex Optical</h1>
+      <h1 class="logo hide">Apex Optical</h1>
       <h4 class="established wings">DC's Opticians since 1977</h4>
       <h4 class="slogan wings up">Frame Your <span class="slogan-noun">Perspective</span></h2>
     </div>
