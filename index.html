@@ -165,7 +165,7 @@
     .hero {
       height: calc( 90vh - 5rem );
       background-image: url("/images/IMG_1903.jpg");
-      background-position: 50% 50%;
+      background-position: 50%, 50%;
       position: relative;
       align-items: flex-start;
       padding: 3rem 0em;
@@ -178,6 +178,7 @@
       order: inherit;
       font-size: 4em;
       padding-top: 1em;
+      line-height: .75em;
     }
     .hero .hed ::first-letter {
       font-size: 4em;
@@ -187,6 +188,7 @@
       padding-right: .25em;
     }
     .hero .dek {
+      order: 2;
     }
     .hero .cta.content {
       display: flex;
@@ -206,6 +208,7 @@
       margin: .5em 0em 0em;
       font-family: var(--font-sub);
       font-size: 2rem;
+      text-align: center;
       color: var(--color-base02)
       border: 3px solid white;
       /* border-radius: .1em .5em; */
@@ -241,7 +244,8 @@
       top: 5rem;
     }
     .location .locname {
-      top: 5vw;
+      font-size: 3rem;
+      font-family: var(--font-title);
     }
     .content {
       background-color: rgba(33,33,33,.7);
@@ -249,6 +253,7 @@
       width: 50%;
       position: relative;
       padding: 1rem 5vw;
+      font-style: normal;
     }
     .footer.main {
       background-color: var(--color-base03);
@@ -287,7 +292,7 @@
   <header>
     <div class="branding">
       <h1 class="logo hide">Apex Optical</h1>
-      <h4 class="established wings">DC's Opticians since 1977</h4>
+      <h4 class="established wings">DC's Top Opticians since 1977</h4>
       <h4 class="slogan wings up">Frame Your <span class="slogan-noun">Perspective</span></h2>
     </div>
     <nav class="main">
@@ -297,36 +302,39 @@
     <section class="hero jumbotron">
       <div class="content cta">
         <h1 class="hed logo">Apex Optical</h3>
-        <h3 class="dek slogan">Frame Your <span class="slogan-noun">Perspective</span></h3>
+        <h3 class="dek slogan hide">Frame Your <span class="slogan-noun">Perspective</span></h3>
         <div class="cta buttons">
           <a class="button internal" href="#WisconsinLocation">Wisconsin Ave</a>
-          <a class="button internal" href="#BethesdaLocation">Bethesda</a>
           <a class="button internal" href="#DowntownLocation">Downtown <abbr class="hidden" title="District of Columbia">DC</abbr></a>
+          <a class="button internal" href="#BethesdaLocation">Bethesda</a>
         </div>
       </div>
     </section>
     <section class="location jumbotron" id="WisconsinLocation">
       <address class="content">
         <h2 class="locname">Wisconsin Avenue</h2>
+        <h4 class="sublocation">Tenley</h4>
         <p class="hours"><span class="bold">Open: </span>Mon, Tues, Wed, Fri 10am-6:30pm, Thur 10am-7:30pm, and Sat 10am-4pm</p>
         <p class="address">4200 Wisconsin Ave NW, Washington, DC 20016 <br>
           <a class="directions button" href="https://www.google.com/maps/dir//4200%20Wisconsin%20Ave%20NW,%20Washington,%20DC%2020016">Get Directions</a></p>
-        <p class="phone"><a class="phonenumber button btn cta" href="tel://2022441308">Call Us: 202-244-1308</a></p>
-      </address>
-    </section>
-    <section class="location jumbotron" id="BethesdaLocation">
-      <address class="content">
-        <h2 class="locname">Bethesda, <abbr title="Maryland">MD</abbr></h2>
-        <p class="hours"><span class="bold">Open: </span>Mon, Tue, Wed, Thur, Fri 10am-6pm</p>
-        <p class="address"><br>
-          <a class="directions button btn cta" href="">Get Directions</a></p>
-        <p class="phone"><a class="phonenumber button btn cta" href="">Call Us</a></p>
+        <p class="phone"><a class="phonenumber button btn cta" href="tel://2022441308">Call Us<br>202-244-1308</a></p>
       </address>
     </section>
     <section class="location jumbotron" id="DowntownLocation">
       <address class="content">
         <h2 class="locname">Downtown <abbr title="District of Columbia">DC</abbr> (L Street)</h2>
+        <h4 class="sublocation">L Street</h4>
         <p class="hours"><span class="bold">Open: </span>Mon, Tues, Wed, Fri 10am-6:30pm, Thur 10am-7:30pm, and Sat 10am-4pm</p>
+        <p class="address"><br>
+          <a class="directions button btn cta" href="">Get Directions</a></p>
+        <p class="phone"><a class="phonenumber button btn cta" href="">Call Us</a></p>
+      </address>
+    </section>
+    <section class="location jumbotron" id="BethesdaLocation">
+      <address class="content">
+        <h2 class="locname">Bethesda, <abbr title="Maryland">MD</abbr></h2>
+        <h4 class="sublocation">Westfield Montgomery</h4>
+        <p class="hours"><span class="bold">Open: </span>Mon, Tue, Wed, Thur, Fri 10am-6pm</p>
         <p class="address"><br>
           <a class="directions button btn cta" href="">Get Directions</a></p>
         <p class="phone"><a class="phonenumber button btn cta" href="">Call Us</a></p>
