@@ -39,9 +39,9 @@
       --color-base1:  #ddd;
       --color-base2:  #eee;
       --color-base3:  #faffff;
-      --font-para: "Forum", "Merriweather", serif;
+      --font-para: "Montserrat"; /* "Forum", "Merriweather", serif; */
       --font-title: "Montserrat", sans-serif;
-      --font-sub: "Forum", cursive;
+      --font-sub: "Montserrat"; /* "Forum", cursive; */
       --font-logo: "cocosignum_maiuscolettoRg";
     }
     .hide {
@@ -212,8 +212,9 @@
       align-items: center;
       align-content: center;
     }
-    a.btn, a.button { 
+    a.btn, a.button, a:visited, a:active { 
       text-decoration: none;
+      color: var(--color-base01);
     }
     .button {
       display: inline-block;
@@ -274,13 +275,13 @@
       color: var(--color-base00);
     }
     #WisconsinLocation {
-      background-image: url("/images/IMG_1888.jpg");
+      background-image: url("./images/IMG_1888.jpg");
     }
     #BethesdaLocation {
-      background-image: url("/images/IMG_1724.jpg");
+      background-image: url("./images/IMG_1724.jpg");
     }
     #DowntownLocation {
-      background-image: url("/images/IMG_1978.jpg");
+      background-image: url("./images/IMG_1978.jpg");
     }
 
     /* Animations */
@@ -373,7 +374,7 @@
     </section>
     <footer class="footer main">
       <section class="general info">
-        <p class="info">Apex Optical was started in 1977 by Mike Pelivanis </p>
+        <p class="info">Established in 1977</p>
       <section class="main-contact-info">
         <!-- Contact form goes here in v0.2         -->
       </section>
