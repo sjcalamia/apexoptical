@@ -147,9 +147,10 @@
     }
     article.homepage {
       position: relative;
-      top: 5rem;
     }
-    section {
+    article.homepage:nth-child(2){
+      position: relative;
+      top: var(--header-height);
     }
     .jumbotron {
       width: 100%;
@@ -167,6 +168,7 @@
       background-position: 50% 50%;
       position: relative;
       align-items: flex-start;
+      padding: 3rem 0em;
     }
     .hero .hed {
       initial-letter: 3.0;
@@ -291,7 +293,7 @@
     <nav class="main">
     </nav>
   </header>
-  <article class="homepage">
+  <article class="homepage app-container">
     <section class="hero jumbotron">
       <div class="content cta">
         <h1 class="hed logo">Apex Optical</h3>
