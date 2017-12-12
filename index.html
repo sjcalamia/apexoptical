@@ -164,12 +164,26 @@
     }
     .hero {
       height: calc( 90vh - 5rem );
-      background-image: url("/images/IMG_1903.jpg");
-      background-position: 50%, 50%;
       position: relative;
       align-items: flex-start;
       padding: 3rem 0em;
+      overflow: hidden;
+      background-image: url("./images/IMG_1903.jpg");
+      background-position: 100%, 50%;
     }
+    /*
+    .hero-background {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%
+      height: 200vh;
+      background-image: url("./images/IMG_1901.jpg");
+      background-position: 100%, 50%;
+      background-size: cover;
+    }
+    */
     .hero .hed {
       initial-letter: 3.0;
     }
@@ -286,13 +300,29 @@
       animation-name: move-out;
       animation-duration: 1s;
     }
+    @keyframes hero-background {
+      from { transform: translateY(0); }
+      to { transform: translateY(-100%); }
+    }
+    .hero-background {
+      animation-name: hero-background;
+      animation-duration: 10s;
+    }
   </style>
+
+  <!-- Panellum -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css">
+<!-- End Panellum -->
 </head>
 <body>
   <header>
     <div class="branding">
       <h1 class="logo hide">Apex Optical</h1>
-      <h4 class="established wings">DC's Top Opticians since 1977</h4>
+      <h4 class="established wings"><abbr title="District of Columbia">DC</abbr>'s Top Opticians since 1977</h4>
       <h4 class="slogan wings up">Frame Your <span class="slogan-noun">Perspective</span></h2>
     </div>
     <nav class="main">
@@ -308,6 +338,7 @@
           <a class="button internal" href="#DowntownLocation">Downtown <abbr class="hidden" title="District of Columbia">DC</abbr></a>
           <a class="button internal" href="#BethesdaLocation">Bethesda</a>
         </div>
+        <div class="hero-background"></div>
       </div>
     </section>
     <section class="location jumbotron" id="WisconsinLocation">
@@ -324,20 +355,20 @@
       <address class="content">
         <h2 class="locname">Downtown <abbr title="District of Columbia">DC</abbr> (L Street)</h2>
         <h4 class="sublocation">L Street</h4>
-        <p class="hours"><span class="bold">Open: </span>Mon, Tues, Wed, Fri 10am-6:30pm, Thur 10am-7:30pm, and Sat 10am-4pm</p>
-        <p class="address"><br>
-          <a class="directions button btn cta" href="">Get Directions</a></p>
-        <p class="phone"><a class="phonenumber button btn cta" href="">Call Us</a></p>
+        <p class="hours"><span class="bold">Open: </span>Mon, Tue, Wed, Thur, Fri 10am-6pm</p>
+        <p class="address">2001 L St NW #110, Washington, DC 20036<br>
+          <a class="directions button btn cta" href="https://www.google.com/maps/dir/''/downtown+apex+optical/data=!4m5!4m4!1m0!1m2!1m1!1s0x89b7b7b763a3698f:0xd89722fcab7adec9?sa=X&ved=0ahUKEwjg_8nVtIXYAhUimeAKHWelAPsQ9RcI7gEwHw">Get Directions</a></p>
+        <p class="phone"><a class="phonenumber button btn cta" href="">Call Us<br>(202) 466-8344</a></p>
       </address>
     </section>
     <section class="location jumbotron" id="BethesdaLocation">
       <address class="content">
         <h2 class="locname">Bethesda, <abbr title="Maryland">MD</abbr></h2>
         <h4 class="sublocation">Westfield Montgomery</h4>
-        <p class="hours"><span class="bold">Open: </span>Mon, Tue, Wed, Thur, Fri 10am-6pm</p>
-        <p class="address"><br>
-          <a class="directions button btn cta" href="">Get Directions</a></p>
-        <p class="phone"><a class="phonenumber button btn cta" href="">Call Us</a></p>
+        <p class="hours"><span class="bold">Open: </span>Mon, Tues, Wed, Fri 10am-6:30pm, Thur 10am-7:30pm, and Sat 10am-4pm</p>
+        <p class="address">10313 Westlake Dr, Bethesda, MD 20817<br>
+          <a class="directions button btn cta" href="https://www.google.com/maps/dir/''/''/data=!4m5!4m4!1m0!1m2!1m1!1s0x89b7cc7e11682439:0x8372d1444c20422f?sa=X&ved=0ahUKEwjktoeYtYXYAhXjmeAKHW5sAK8Q9RcICzAA">Get Directions</a></p>
+        <p class="phone"><a class="phonenumber button btn cta" href="">Call Us<br>(301) 767-5900</a></p>
       </address>
     </section>
     <footer class="footer main">
@@ -346,7 +377,6 @@
       <section class="main-contact-info">
         <!-- Contact form goes here in v0.2         -->
       </section>
-    
     </footer>
   </article>
   <script language="JavaScript">//<!--
@@ -412,5 +442,9 @@
 
   //-->
   </script>
+  <!-- Panellum -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
+<!-- End Panellum -->
 </body>
 </html>
