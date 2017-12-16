@@ -250,23 +250,25 @@
       border-radius: .05em;
       border-color: var(--color-base2);
       background-color: var(--color-base01);
-      background-color: rgba(90,90,90,.8);
+      background-color: rgba(0,0,0,.6);
+      width: 33%;
+      min-width: 9em;
     }
     .cta.buttons {
       display: flex;
-      max-width: 90%
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
       align-items: baseline;
       align-content: center;
-      margin: 2.5em 0 3em 1em;
+      margin: 2.5em 0 3em 0em;
     }
     .hero .cta.buttons .button {
     }
     .location {
       width: 100%;
-      height: 88vh;
+      height: auto;
+      min-height: 88vh;
       background-color: var(--color-base02);
       color: var(--color-base3);
       text-align: center;
@@ -299,9 +301,12 @@
       background-color: rgba(33,33,33,.7);
       color: var(--color-base3);
       width: 50%;
+      min-width: 17em;
       position: relative;
       padding: 1rem 5vw;
       font-style: normal;
+      overflow: hidden;
+      margin: 3em 0em;
     }
     .content::before, .content::after {
       content: "\2022\2022";
@@ -403,7 +408,7 @@
       <address class="content">
         <h2 class="locname hed">Wisconsin Avenue</h2>
         <h4 class="sublocation dek">Tenley Opticians</h4>
-        <p class="address">4200 Wisconsin Ave NW, Washington, DC 20016</p>
+        <p class="address">4200&nbsp;Wisconsin&nbsp;Ave&nbsp;NW, Washington,&nbsp;DC&nbsp;20016</p>
         <p class="phone"><a class="phonenumber" href="tel:2022441308">202-244-1308</a></p>
         <p class="open-hours"><span class="bold">Open:</span>&nbsp;
           <span class="day mon">Mon</span>,&nbsp;
@@ -424,7 +429,7 @@
       <address class="content">
         <h2 class="locname">Downtown <abbr title="District of Columbia">DC</abbr></h2>
         <h4 class="sublocation">L Street NW Opticians</h4>
-          <p class="address">2001 L St NW #110, Washington, DC 20036</p>
+          <p class="address">2001&nbsp;L&nbsp;St&nbsp;NW&nbsp;#110, Washington,&nbsp;DC&nbsp;20036</p>
           <p class="phone"><a class="phonenumber" href="tel:2024468344">202-466-8344</a></p>
         <p class="open-hours"><span class="bold">Open: </span>
           <span class="day mon">Mon</span>,&nbsp;
@@ -446,7 +451,7 @@
         <h2 class="locname">Bethesda, <abbr title="Maryland">MD</abbr></h2>
         <h4 class="sublocation">Westfield Montgomery<br>Opticians</h4>
 
-        <p class="address">10317-A Westlake Dr, Bethesda, MD 20817</p>
+        <p class="address">10317-A&nbsp;Westlake&nbsp;Dr, Bethesda,&nbsp;MD&nbsp;20817</p>
         <p class="phone"><a class="phonenumber" href="tel:3017675900">301-767-5900</a></p>
         <p class="open-hours"><span class="bold">Open:</span>&nbsp;
           <span class="day mon">Mon</span>,&nbsp;
