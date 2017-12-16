@@ -44,7 +44,14 @@
       --font-dek: "Merriweather", "Forum", serif;
       --font-sub: "Montserrat"; /* "Forum", cursive; */
       --font-logo: "cocosignum_maiuscolettoRg";
+      --fs-xs: .5em;
+      --fs-sm: .75em;
+      --fs-md: 1em;
+      --fs-lg: 1.5em;
+      --fs-xl: 2em;
+      --fs-xxl: 3em;
     }
+    @media () {}
     .hide {
       /* display: none; */
       visibility: hidden;
@@ -266,7 +273,7 @@
       padding-top: 5vh;
       position: relative;
       background-size: cover;
-      background-position: 100% 50%;
+      background-position: 50% 100%;
     }
     .location:first-of-type {
       top: 5rem;
@@ -274,6 +281,12 @@
     .location .locname {
       font-size: 3rem;
       font-family: var(--font-title);
+    }
+    @media (max-width: 800px){
+      .location .locname {
+        /* font-size: var(--large); */
+        font-size: 2em;
+      }
     }
     .location .sublocation, .dek {
       font-size: 1.33em;
@@ -412,7 +425,7 @@
         <h2 class="locname">Downtown <abbr title="District of Columbia">DC</abbr></h2>
         <h4 class="sublocation">L Street NW Opticians</h4>
           <p class="address">2001 L St NW #110, Washington, DC 20036</p>
-          <p class="phone"><a class="phonenumber" href="tel:2024468344">(202) 466-8344</a></p>
+          <p class="phone"><a class="phonenumber" href="tel:2024468344">202-466-8344</a></p>
         <p class="open-hours"><span class="bold">Open: </span>
           <span class="day mon">Mon</span>,&nbsp;
           <span class="day tue">Tues</span>,&nbsp;
@@ -433,8 +446,8 @@
         <h2 class="locname">Bethesda, <abbr title="Maryland">MD</abbr></h2>
         <h4 class="sublocation">Westfield Montgomery<br>Opticians</h4>
 
-        <p class="address">10313 Westlake Dr, Bethesda, MD 20817</p>
-        <p class="phone"><a class="phonenumber" href="tel:3017675900">(301) 767-5900</a></p>
+        <p class="address">10317-A Westlake Dr, Bethesda, MD 20817</p>
+        <p class="phone"><a class="phonenumber" href="tel:3017675900">301-767-5900</a></p>
         <p class="open-hours"><span class="bold">Open:</span>&nbsp;
           <span class="day mon">Mon</span>,&nbsp;
           <span class="day tue">Tues</span>,&nbsp;
