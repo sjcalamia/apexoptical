@@ -368,6 +368,7 @@
       color: var(--color-base3);
       font-size: var(--fs-lg);
       padding: 1rem 0 2rem;
+      text-decoration: none;
     }
     .open-hours {
       margin-top: 2em;
@@ -375,6 +376,21 @@
     .location .cta.button {
       flex: .45 .45 0;
     }
+.location .hed {
+  order: 0;
+}
+.location .phone {
+  order: 1;
+}
+.location .address {
+  order: 2;
+}
+.location .cta {
+  order: 3;
+}
+.location .open-hours {
+  order: 4;
+}
     .footer.main {
       background-color: var(--color-base03);
       color: var(--color-base00);
