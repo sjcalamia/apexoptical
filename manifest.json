@@ -1,0 +1,7 @@
+{
+  "name": "apexoptical",
+  "short_name": "apexoptical",
+  "description": "Progressive web app for Apex Optical",
+  "start_url": "/",
+  "display": "standalone"
+}

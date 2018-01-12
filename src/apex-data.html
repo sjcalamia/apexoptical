@@ -1,0 +1,61 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="apex-data">
+
+  <script>
+    (function() {
+
+      let locationList = [
+        { name: 'Tenley', address: '4200 Wisconsin Ave NW, Washington, DC 20016', phone: '2022441308', hours_raw: '', hours: { mon: ['1000','1830'], tue: ['1000','1830'], wed: ['1000','1830'], thu: ['1000','1930'], fri: ['1000','1830'], sat: ['1000','1600'], sun: [''] } },
+        { name: 'Downtown', address: '2001 L St NW #110, Washington, DC 20036', phone: '2024468344', hours_raw: '', hours: { mon: ['1000','1800'], tue: ['1000','1800'], wed: ['1000','1800'], thu: ['1000','1800'], fri: ['1000','1800'], sat: [''], sun: [''] } },
+        { name: 'Bethesda', address: '10317-A Westlake Dr, Bethesda, MD 20817', phone: '3017675900', hours_raw: '', hours: { mon: ['1000','1830'], tue: ['1000','1830'], wed: ['1000','1830'], thu: ['1000','1930'], fri: ['1000','1830'], sat: ['1000','1600'], sun: [''] } },
+      ];
+      // Note for parsing addresses: Will need to make &nbsp; for all address whitespace, except between Address Line 1 and the City/State line
+      // for example: 4200&nbsp;Wisconsin&nbsp;Ave&nbsp;NW, Washington,&nbsp;DC&nbsp;20016
+
+      class ApexData extends Polymer.Element {
+
+        static get is() { return 'apex-data'; }
+
+        static get properties() { return {
+            locations: {
+              type: Array,
+              value: locationList,
+              readOnly: true,
+              notify: true
+            },
+            locName: String,
+            loc: {
+              type: Object,
+              computed: "_computeLocation(locName)",
+              notify: true
+            },
+            offline: Boolean,
+            loading: {
+              type: Boolean,
+              readOnly: true,
+              notify: true
+            },
+            failure: {
+              type: Boolean,
+              readOnly: true,
+              notify: true
+            }
+        }}
+
+        _computeLocation(locName) {
+          for (let i = 0, c; c = this.locations[i]; ++i) {
+            if (c.name === locName) {
+              return c;
+            }
+          }
+          return null;
+        }
+      }
+
+      customElements.define(ApexData.is, ApexData);
+
+    })();
+  </script>
+</dom-module>
+

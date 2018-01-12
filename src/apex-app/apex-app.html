@@ -1,0 +1,93 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/helpers/helpers.html">
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../apex-data.html">
+<link rel="import" href="../apex-nav.html">
+<link rel="import" href="../apex-views/apex-home.html">
+<link rel="import" href="../apex-views/apex-location.html">
+
+<dom-module id="apex-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <app-location route="{{route}}"></app-location>
+    <app-route
+      route="{{route}}"
+      data="{{_routeData}}"
+      pattern="/:loc"></app-route>
+    <apex-data
+      id="data"
+      locations="{{locations}}"
+      loc-name="[[locName]]"
+      loc="{{loc}}"
+      loading="{{loading}}"
+      offline="[[offline]]"
+      failure="{{failure}}"></apex-data>
+    <apex-nav
+      id="nav"
+      app-title="[[appTitle]]"
+      page="[[page]]"
+      loc="[[locName]]"
+      load-complete="[[loadComplete]]">
+      <h1 main-title>Apex Optical</h1>
+    </apex-nav>
+    <iron-pages role="main" selected="[[page]]" attr-for-selected="name" fallback-selection="home">
+      <apex-home
+        id="home"
+        name="home"
+        loading="[[loading]]"
+        offline="[[offline]]"
+        failure="[[failure]]"></apex-home>
+      <apex-location
+        name="loc"
+        route="{{route}}"
+        loc-name="{{locName}}"
+        loc="[[loc]]"
+        loading="[[loading]]"
+        offline="[[offline]]"
+        failure="[[failure]]"></apex-location>
+    </iron-pages>
+    <footer class="footer main">
+      <section class="general info">
+        <p class="info">Established in 1977</p>
+      <section class="main-contact-info">
+        <!-- Contact form goes here in v0.2         -->
+      </section>
+    </footer>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class ApexApp extends Polymer.Element {
+      static get is() { return 'apex-app' }
+      static get properties() { return {
+          appTitle: String,
+          page: {
+            type: String,
+            observer: '_pageChanged'
+          },
+          routeData: Object,
+          locations: Array,
+          loc: Object,
+          offline: {
+            type: Boolean,
+            value: false,
+            readOnly: true
+          },
+          failure: Boolean,
+          loadComplete: Boolean
+        }
+      }
+    }
+
+    window.customElements.define(ApexApp.is, ApexApp);
+  </script>
+</dom-module>

@@ -1,0 +1,88 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+
+<dom-module id="apex-location">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <app-route
+      route="{{route}}"
+      pattern="/:loc"
+      data="{{_routeData}}"></app-route>
+
+  </template>
+
+  <script>
+  /**
+   * @customElement
+   * @polymer
+   */
+  class ApexLocation extends Polymer.Element {
+    static get is() { return 'apex-location'; }
+    static get properties() { return {
+        route: Object,
+        loc: Object,
+        loading: Boolean,
+        offline: Boolean,
+        failure: Boolean,
+        locName: {
+          type: Boolean,
+          computed: '_return(_routeData.loc)',
+          notify: true
+        },
+        name: String,
+        phone: String,
+        address: String,
+        hours: {
+          type: String,
+          computed: "_computedHours(loc)",
+          notify: true
+        },
+        _routeData: Object,
+      }
+    }
+
+    static get observers() { return [
+      '_loadLocation(loc)',
+      '_locationChanged(loc)'
+    ]}
+
+    _parseLocationHTML(loc) {
+      return "";
+    }
+
+    _loadLocation(loc) {
+      // If this._currentArticleCover isn't defined here, then it hasn't been stamped yet, and
+      // the template already has the `fade-in` class.
+      //if (this._currentArticleCover) {
+        //this._currentArticleCover.classList.add('fade-in');
+      //}
+      this.$.content.innerHTML = _parseLocationHTML(loc);
+      //ShadyCSS.styleSubtree(this.$.content);
+    }
+
+    _locationChanged(article) {
+      // If this._currentArticleCover isn't defined here, then `attached()` (which hasn't been
+      // run yet) will set the article.
+      //if (this._currentArticleCover) {
+      //  this._currentArticleCover.article = article;
+      //}
+    }
+    
+    _computedHours(loc) {
+      let hours = "", open = [], closed = [];
+      for (let d,h of loc.hours) {
+        if (h.length == 1 && h[0] == "") { closed.push(d); }
+      }
+      return hours;
+    }
+  }
+
+  window.customElements.define(ApexLocation.is, ApexLocation);
+  </script>
+</dom-module>
