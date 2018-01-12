@@ -18,7 +18,7 @@
     <app-location route="{{route}}"></app-location>
     <app-route
       route="{{route}}"
-      data="{{_routeData}}"
+      data="{{routeData}}"
       pattern="/:loc"></app-route>
     <apex-data
       id="data"
@@ -36,7 +36,11 @@
       load-complete="[[loadComplete]]">
       <h1 main-title>Apex Optical</h1>
     </apex-nav>
-    <iron-pages role="main" selected="[[page]]" attr-for-selected="name" fallback-selection="home">
+    <iron-pages 
+      role="main" 
+      selected="[[routeData.loc]]" 
+      attr-for-selected="name" 
+      fallback-selection="home">
       <apex-home
         id="home"
         name="home"
