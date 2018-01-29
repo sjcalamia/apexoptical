@@ -200,7 +200,8 @@
       min-height: calc( 90vh - 5rem );
       position: relative;
       overflow: hidden;
-      background-image: url("../images/IMG_1903.jpg");
+      /* background-image: url("../images/IMG_1903.jpg"); */
+			background-image: url("https://res.cloudinary.com/apexopt1/image/upload/c_fill,cs_srgb,e_vibrance:20,fl_keep_attribution.progressive,g_center,w_1270/e_art:red_rock/v1517093939/IMG_1903_zt1vep.jpg");
       background-position: 100%, 50%;
     }
     /*
@@ -396,13 +397,16 @@
       color: var(--color-base00);
     }
     #TenleyLocation {
-      background-image: url("../images/IMG_1888.jpg");
+      /* background-image: url("../images/IMG_1888.jpg"); */
+			background-image: url("https://res.cloudinary.com/apexopt1/image/upload/c_fill,cs_srgb,e_loop:18,f_auto,fl_keep_attribution.progressive,g_center,w_2840/e_art:quartz/v1517093970/IMG_1888_j6rbnq.jpg");
     }
     #BethesdaLocation {
-      background-image: url("../images/IMG_1724.jpg");
+      /* background-image: url("../images/IMG_1724.jpg"); */
+			background-image: url("https://res.cloudinary.com/apexopt1/image/upload/c_fill,cs_srgb,e_loop:18,f_auto,fl_keep_attribution.progressive,g_center,w_2840/e_art:quartz/v1517094004/IMG_1724_ixwak0.jpg");
     }
     #DowntownLocation {
-      background-image: url("../images/IMG_1978.jpg");
+      /* background-image: url("../images/IMG_1978.jpg"); */
+			background-image: url("https://res.cloudinary.com/apexopt1/image/upload/c_fill,cs_srgb,e_loop:18,f_auto,fl_keep_attribution.progressive,g_custom,w_2840/e_art:quartz/v1517093977/IMG_1978_sdhemf.jpg");
     }
 
     /* Animations */
